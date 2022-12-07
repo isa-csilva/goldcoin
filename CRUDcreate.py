@@ -1,10 +1,12 @@
 import mysql.connector
 
-import GoldCoinsCadastro
-from conexao import *
-#input de dados
+from GoldCoinsCadastro import *
+from GoldCoinsCadastro import Ui_TelaCadastro
 
-add_nome_completo = input(str('Nome completo: '))
+from conexao import *
+
+#input de dados
+add_nome_completo = input(str('Digite o nome completo: '))
 ddd = int(input('Digite o DDD: ' ))
 telefone = int(input('Digite o telefone: ' ))
 add_email = input(str('Adicione o email: '))

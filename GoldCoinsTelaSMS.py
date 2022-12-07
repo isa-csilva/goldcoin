@@ -176,8 +176,24 @@ class Ui_TelaSMS(object):
         TelaSMS.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(TelaSMS)
+
+        # button function -> when clicked catch data from checkbox and radiobuttons
+        self.BotaoProsseguir.clicked.connect(self.checkBoxesCotacao)
+        self.BotaoProsseguir.clicked.connect(self.frequenciaMsg)
+
         self.BotaoVoltar.clicked.connect(TelaSMS.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(TelaSMS)
+
+        # catching data methods
+    def checkBoxesCotacao(self):
+        if (self.check_dolar.isChecked() or self.check_euro.isChecked() or self.check_bitcoin.isChecked() == True):
+            print('Checkbox selecionado')
+
+    def frequenciaMsg(self):
+        if (self.escolha_finaldia.isChecked() == True):
+            print('O usuário escolheu receber mensagens ao final do dia.')
+        elif (self.escolha_sexta.isChecked() == True):
+            print('O usuário escolheu receber mensagens na sexta.')
 
     def retranslateUi(self, TelaSMS):
         _translate = QtCore.QCoreApplication.translate

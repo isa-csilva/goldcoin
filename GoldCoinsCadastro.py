@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from GoldCoinsTelaSMS import Ui_TelaSMS
 
-
 class Ui_TelaCadastro(object):
     def OpenMessagesConfig(self):
         self.window = QtWidgets.QMainWindow()
@@ -161,8 +160,27 @@ class Ui_TelaCadastro(object):
         TelaCadastro.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(TelaCadastro)
+
+        #button function -> when clicked catch data from inputboxes
+        self.BotaoProsseguir.clicked.connect(self.recebeNome)
+        self.BotaoProsseguir.clicked.connect(self.recebeNumero)
+        self.BotaoProsseguir.clicked.connect(self.recebeEmail)
+
         self.BotaoSair.clicked.connect(TelaCadastro.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(TelaCadastro)
+
+    #catching data methods
+    def recebeNome(self):
+        self.nomeUsuario = (self.input_nome.toPlainText())
+        return self.nomeUsuario
+
+    def recebeNumero(self):
+        self.numeroUsuario = (self.input_numero.toPlainText())
+        return self.numeroUsuario
+
+    def recebeEmail(self):
+        self.emailUsuario = (self.input_email.toPlainText())
+        return self.emailUsuario
 
     def retranslateUi(self, TelaCadastro):
         _translate = QtCore.QCoreApplication.translate

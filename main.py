@@ -1,8 +1,10 @@
 #Tela inicial
+import GoldCoinsCadastro
 from GoldCoinsTelaVitoria import Ui_TelaVitoria
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication
 import resources
+
 
 #Inherited to the main window class of the interface file
 class MainWindow(QMainWindow, Ui_TelaVitoria):
@@ -15,4 +17,3 @@ if __name__ == '__main__':
     myWin = MainWindow()
     myWin.show()
     sys.exit(app.exec())
-
