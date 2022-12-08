@@ -5,11 +5,15 @@ from GoldCoinsCadastro import Ui_TelaCadastro
 
 from conexao import *
 
+def recebeNome(self):
+    return super().recebeNome()
+    print("{}".format(self.nomeUsuario))
+
 #input de dados
-add_nome_completo = input(str('Digite o nome completo: '))
-ddd = int(input('Digite o DDD: ' ))
-telefone = int(input('Digite o telefone: ' ))
-add_email = input(str('Adicione o email: '))
+#add_nome_completo =
+#ddd = int(input('Digite o DDD: ' ))
+#telefone = int(input('Digite o telefone: ' ))
+#add_email = input(str('Adicione o email: '))
 
 def numConcat(ddd, telefone):
     ddd = str(ddd)
